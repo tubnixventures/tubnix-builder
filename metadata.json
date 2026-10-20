@@ -1,0 +1,7 @@
+{
+  "name": "Cloudflare VS Code AI Coding Agent",
+  "description": "Secure VS Code AI coding agent using direct Cloudflare Workers AI APIs with zero-backend architecture, 3-tier routing, budget limits, and secret redaction.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+

@@ -1,0 +1,48 @@
+import { WorkspaceFile, EditorTab, TerminalEntry, EditorSettings } from './ide';
+import { AttachedContextItem, AgentChatMessage } from './contextAttachment';
+import { CodeDiff } from './agentTools';
+
+export interface IdeContainerProps {
+  files: WorkspaceFile[];
+  setFiles: React.Dispatch<React.SetStateAction<WorkspaceFile[]>>;
+  activeFile?: WorkspaceFile;
+  selectFile: (file: WorkspaceFile) => void;
+  tabs: EditorTab[];
+  setTabs: React.Dispatch<React.SetStateAction<EditorTab[]>>;
+  editorContent: string;
+  isDirty: boolean;
+  canUndo: boolean;
+  canRedo: boolean;
+  settings: EditorSettings;
+  inlineGhostText?: string;
+  showAgent: boolean;
+  showPanel: boolean;
+  onTogglePanel: () => void;
+  onOpenNativeFolder: () => void;
+  terminalEntries: TerminalEntry[];
+  agentMessages: AgentChatMessage[];
+  isAgentLoading: boolean;
+  progressStep?: string;
+  progressPercent?: number;
+  attachedContext: AttachedContextItem[];
+  onRemoveContextItem: (id: string) => void;
+  onAttachActiveFile: () => void;
+  onAttachSpecificFile: (file: WorkspaceFile) => void;
+  onUploadContextFile?: (item: AttachedContextItem) => void;
+  onUndoEdit?: (id: string) => void;
+  onRedoEdit?: (id: string) => void;
+  onOpenDiff?: (diff: CodeDiff) => void;
+  onUndo: () => void;
+  onRedo: () => void;
+  onSave: () => void;
+  onTriggerInlineAi: () => void;
+  onAcceptGhostText: () => void;
+  onRunTerminalCommand: (command: string) => void;
+  onClearTerminal: () => void;
+  onCloseAgent: () => void;
+  onToggleAgent: () => void;
+  onOpenSettings: () => void;
+  onLaunchBrowser: () => void;
+  onSendAgentMessage: (msg: string) => void;
+  onEditorChange: (val: string) => void;
+}
